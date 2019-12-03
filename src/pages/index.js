@@ -4,8 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import Instagram from "../components/instagram"
-import LeafletMap from "../components/leafletMap"
 import Footer from "../components/footer"
 
 const IndexPage = ({ data }) => {
@@ -48,16 +46,6 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
       <div className="parallax"></div>
-      <section className="container">
-        <Instagram />
-      </section>
-      {typeof window !== "undefined" && (
-        <LeafletMap
-          position={[62.01164, -6.774]} // Your Coordinates
-          zoom={18} // Zoom Level
-          markerText={"Niels Finsensgøta 16, FO-100 Tórshavn, Faroe Islands"} // Icon text
-        />
-      )}
       <Footer />
     </Layout>
   )
