@@ -10,12 +10,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section className="hero">
-        <Img
-          fluid={data.vakridalurKamt.childImageSharp.fluid}
-          className="hero-image"
-        />
-      </section>
+      <div className="parallax-top"></div>
       <section className="container">
         <div className="gallery">
           <Img
@@ -32,20 +27,60 @@ const IndexPage = ({ data }) => {
           />
         </div>
         <div className="about">
-          <h2>Tey fyrstu føroysku orðini</h2>
-          <p>
+          <Img
+            fluid={data.fyrstuForoysku.childImageSharp.fluid}
+            className="about-item"
+          />
+          <p className="center about-item">
             Hey Breyð leggur dent á orð og ljóð og snýr seg serstakliga um
             málputlispøl, ið kunnu loysast við at fáa orð at ríma. Spælið er
             ætlað lítlum børnum við vaksnari umsjón.
           </p>
-          <p>
+          <p className="center about-item">
             Í spælinum lærir tú tey fyrstu føroysku orðini. Tú kanst spæla antin
             sum Bina ella sum Broddi, og tú lærir, hvat omman og abbin gera á
             bóndagarðinum.
           </p>
         </div>
+        <div className="parallax"></div>
+        <div className="team">
+          <div className="team-column">
+            <Img
+              fluid={data.gjortHava.childImageSharp.fluid}
+              className="team-item"
+            />
+            <ul className="team-item">
+              <li>Páll Brim, tónleikari</li>
+              <li>Julius Biskopstø, forritari</li>
+              <li>Ólavur Ellefsen, testari</li>
+              <li>Jóhann Østerø, forritari</li>
+              <li>Hans Jacob Østerø, teknari</li>
+              <li>Marin Fríhild Kamban, námsfrøðingur</li>
+              <li>Elinborg Osvaldsdóttir, málfrøðingur</li>
+            </ul>
+          </div>
+          <div className="team-column">
+            <Img
+              fluid={data.gamanGamesLogo.childImageSharp.fluid}
+              className="team-item team-logo"
+            />
+            <Img
+              fluid={data.toymid.childImageSharp.fluid}
+              className="team-item"
+            />
+          </div>
+          <div className="team-column">
+            <Img
+              fluid={data.studladHevur.childImageSharp.fluid}
+              className="team-item"
+            />{" "}
+            <Img
+              fluid={data.torshavnarKommuna.childImageSharp.fluid}
+              className="team-item team-logo"
+            />
+          </div>
+        </div>
       </section>
-      <div className="parallax"></div>
       <Footer />
     </Layout>
   )
@@ -60,6 +95,7 @@ export const fluidImage = graphql`
     }
   }
 `
+
 
 export const pageQuery = graphql`
   query {
@@ -76,6 +112,26 @@ export const pageQuery = graphql`
       ...fluidImage
     }
     vakridalur: file(relativePath: { eq: "vakridalur.webp" }) {
+      ...fluidImage
+    }
+    fyrstuForoysku: file(
+      relativePath: { eq: "tey-fyrstu-foroysku-ordini.webp" }
+    ) {
+      ...fluidImage
+    }
+    gjortHava: file(relativePath: { eq: "gjort-hava.webp" }) {
+      ...fluidImage
+    }
+    gamanGamesLogo: file(relativePath: { eq: "gaman-games-logo.webp" }) {
+      ...fluidImage
+    }
+    toymid: file(relativePath: { eq: "toymid.webp" }) {
+      ...fluidImage
+    }
+    studladHevur: file(relativePath: { eq: "studlad-hevur.webp" }) {
+      ...fluidImage
+    }
+    torshavnarKommuna: file(relativePath: { eq: "torshavnar-kommuna.webp" }) {
       ...fluidImage
     }
   }
