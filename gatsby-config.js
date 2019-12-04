@@ -35,12 +35,6 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `kelvinpocketcafe`, // Your Instagram
-      },
-    },
-    {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
