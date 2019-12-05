@@ -11,12 +11,12 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <div className="top-container">
-      <a href="https://www.facebook.com/gamangames">
-        <Img
-          fluid={data.facebookIkon.childImageSharp.fluid}
-          className="facebook-ikon"
-          style={{ position: "absolute" }}
-        />
+        <a href="https://www.facebook.com/gamangames">
+          <Img
+            fluid={data.facebookIkon.childImageSharp.fluid}
+            className="facebook-ikon"
+            style={{ position: "absolute" }}
+          />
         </a>
         <Img
           fluid={data.heyBreyd.childImageSharp.fluid}
@@ -60,16 +60,13 @@ const IndexPage = ({ data }) => {
           />
         </div>
         <div className="about">
-          <Img
-            fluid={data.fyrstuForoysku.childImageSharp.fluid}
-            className="about-item"
-          />
-          <p className="center about-item">
+          <h1>Tey fyrstu føroysku orðini</h1>
+          <p className="about-item">
             Hey Breyð leggur dent á orð og ljóð og snýr seg serstakliga um
             málputlispøl, ið kunnu loysast við at fáa orð at ríma. Spælið er
             ætlað lítlum børnum við vaksnari umsjón.
           </p>
-          <p className="center about-item">
+          <p className="about-item">
             Í spælinum lærir tú tey fyrstu føroysku orðini. Tú kanst spæla antin
             sum Bina ella sum Broddi, og tú lærir, hvat omman og abbin gera á
             bóndagarðinum.
@@ -78,10 +75,7 @@ const IndexPage = ({ data }) => {
         <div className="parallax"></div>
         <div className="team">
           <div className="team-column">
-            <Img
-              fluid={data.gjortHava.childImageSharp.fluid}
-              className="team-item"
-            />
+            <h1>Gjørt hava</h1>
             <ul className="team-item">
               <li>Páll Brim, tónleikari</li>
               <li>Julius Biskopstø, forritari</li>
@@ -103,10 +97,7 @@ const IndexPage = ({ data }) => {
             />
           </div>
           <div className="team-column">
-            <Img
-              fluid={data.studladHevur.childImageSharp.fluid}
-              className="team-item"
-            />{" "}
+            <h1>Stuðlað hevur</h1>
             <Img
               fluid={data.torshavnarKommuna.childImageSharp.fluid}
               className="team-item team-logo"
@@ -149,39 +140,28 @@ export const pageQuery = graphql`
     facebookIkon: file(relativePath: { eq: "facebook-ikon.png" }) {
       ...fluidImage
     }
-    vakridalurKamt: file(relativePath: { eq: "vakridalur-kamt.webp" }) {
+    vakridalurKamt: file(relativePath: { eq: "vakridalur-kamt.png" }) {
       ...fluidImage
     }
-    vakridalurKlart: file(relativePath: { eq: "vakridalur-klart.webp" }) {
+    vakridalurKlart: file(relativePath: { eq: "vakridalur-klart.png" }) {
       ...fluidImage
     }
-    aFlot: file(relativePath: { eq: "a-flot.webp" }) {
+    aFlot: file(relativePath: { eq: "a-flot.png" }) {
       ...fluidImage
     }
-    fjosid: file(relativePath: { eq: "fjosid.webp" }) {
+    fjosid: file(relativePath: { eq: "fjosid.png" }) {
       ...fluidImage
     }
-    vakridalur: file(relativePath: { eq: "vakridalur.webp" }) {
+    vakridalur: file(relativePath: { eq: "vakridalur.png" }) {
       ...fluidImage
     }
-    fyrstuForoysku: file(
-      relativePath: { eq: "tey-fyrstu-foroysku-ordini.webp" }
-    ) {
+    gamanGamesLogo: file(relativePath: { eq: "gaman-games-logo.png" }) {
       ...fluidImage
     }
-    gjortHava: file(relativePath: { eq: "gjort-hava.webp" }) {
+    toymid: file(relativePath: { eq: "toymid.png" }) {
       ...fluidImage
     }
-    gamanGamesLogo: file(relativePath: { eq: "gaman-games-logo.webp" }) {
-      ...fluidImage
-    }
-    toymid: file(relativePath: { eq: "toymid.webp" }) {
-      ...fluidImage
-    }
-    studladHevur: file(relativePath: { eq: "studlad-hevur.webp" }) {
-      ...fluidImage
-    }
-    torshavnarKommuna: file(relativePath: { eq: "torshavnar-kommuna.webp" }) {
+    torshavnarKommuna: file(relativePath: { eq: "torshavnar-kommuna.png" }) {
       ...fluidImage
     }
   }

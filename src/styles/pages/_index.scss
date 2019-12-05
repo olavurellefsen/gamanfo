@@ -4,6 +4,19 @@
 
 main {
   background-color: $background;
+  font-size: $ml-size;
+}
+
+h1 {
+  text-align: center;
+  font-size: $xxl-size;
+  color: #ffe800;
+  text-shadow: 0px 0px 3px red;
+  margin-top: 20px;
+}
+
+p {
+  margin: 0 10px;
 }
 
 .top-container {
@@ -103,28 +116,22 @@ main {
   flex-direction: column;
   margin: 0 auto;
 
-  .description {
-    text-align: center;
-    font-size: $ms-size;
-    padding: 80px 20px;
-    @media screen and (min-width: 768px) {
-      padding: 100px 120px;
-    }
-    @media screen and (min-width: 1024px) {
-      padding: 120px 140px;
-    }
-  }
   .gallery {
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
     align-content: stretch;
     width: 100%;
     margin-top: 10px;
+    flex-direction: column;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }    
   }
   .gallery-item {
     flex: 1;
-    max-width: 33%;
+    @media screen and (min-width: 768px) {
+      max-width: 33%;
+    }
   }
   .about {
     display: flex;
@@ -134,14 +141,20 @@ main {
   }
   .about-item {
     flex: 1;
-    width: 40vw;
     align-self: center;
-    margin-top: 30px;
+    margin-top: 10px;
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      width: 40vw;
+    }
   }
   .team {
     display: flex;
     justify-content: space-evenly;
-    flex-direction: row;
+    flex-direction: column;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
   }
   .team-column {
     display: flex;
@@ -156,7 +169,7 @@ main {
   }
 }
 .parallax {
-  background-image: url("../images/vakridalur-klart.webp");
+  background-image: url("../images/vakridalur-klart.png");
   background-attachment: fixed;
   background-position: 60% 50%;
   background-repeat: no-repeat;

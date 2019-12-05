@@ -10,15 +10,10 @@ const Footer = () => {
           <span>Niels Finsensgøta 16</span>
           <span>100 Tórshavn</span>
         </div>
-        <div className="hours">
-          <h3>_</h3>
-          <span>_</span>
-          <span>_</span>
-        </div>
         <div className="contact">
           <h3>KONTAKTA OKKUM</h3>
           <span>+298 556600</span>
-          <span>@gamangames</span>
+          <span><a href="https://www.facebook.com/gamangames">facebook.com/gamangames</a></span>
         </div>
       </section>
     </footer>

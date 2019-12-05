@@ -7,19 +7,15 @@ const typography = new Typography({
   blockMarginBottom: 0.75,
   googleFonts: [
     {
-      name: "Nunito",
-      styles: ["400"],
-    },
-    {
-      name: "Raleway",
-      styles: ["400", "400i", "700", "700i"],
-    },
-    {
       name: "Caveat",
-      styles: ["700"]
+      styles: ["cursive"]
+    },
+    {
+      name: "Londrina Outline",
+      styles: ["italic"]
     }
   ],
-  headerFontFamily: ["Nunito", "sans-serif"],
+  headerFontFamily: ["Caveat", "sans-serif"],
   bodyFontFamily: ["Caveat", "sans-serif"],
   headerColor: "hsla(0,0%,0%,1)",
   bodyColor: "hsla(0,0%,0%,0.8)",
