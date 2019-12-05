@@ -10,7 +10,40 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="parallax-top"></div>
+      <div className="top-container">
+      <a href="https://www.facebook.com/gamangames">
+        <Img
+          fluid={data.facebookIkon.childImageSharp.fluid}
+          className="facebook-ikon"
+          style={{ position: "absolute" }}
+        />
+        </a>
+        <Img
+          fluid={data.heyBreyd.childImageSharp.fluid}
+          className="hey-breyd"
+          style={{ position: "absolute" }}
+        />
+        <a href="https://apps.apple.com/sa/app/heybreyd/id1449597688">
+          <Img
+            fluid={data.appStoreIkon.childImageSharp.fluid}
+            className="app-store-ikon"
+            style={{ position: "absolute" }}
+          />
+        </a>
+        <Img
+          fluid={data.broddiHey.childImageSharp.fluid}
+          className="broddi-hey"
+          style={{ position: "absolute" }}
+        />
+        <Img
+          fluid={data.binaHey.childImageSharp.fluid}
+          className="bina-hey"
+          style={{ position: "absolute" }}
+        />
+        <div className="parallax-top-container">
+          <div className="parallax-top"></div>
+        </div>
+      </div>
       <section className="container">
         <div className="gallery">
           <Img
@@ -90,15 +123,32 @@ export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
       fluid(maxWidth: 1600) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
 `
 
-
 export const pageQuery = graphql`
   query {
+    heyBreyd: file(relativePath: { eq: "hey-breyd.png" }) {
+      ...fluidImage
+    }
+    appIkon: file(relativePath: { eq: "app-ikon.png" }) {
+      ...fluidImage
+    }
+    appStoreIkon: file(relativePath: { eq: "app-store-ikon.png" }) {
+      ...fluidImage
+    }
+    binaHey: file(relativePath: { eq: "bina-hey.png" }) {
+      ...fluidImage
+    }
+    broddiHey: file(relativePath: { eq: "broddi-hey.png" }) {
+      ...fluidImage
+    }
+    facebookIkon: file(relativePath: { eq: "facebook-ikon.png" }) {
+      ...fluidImage
+    }
     vakridalurKamt: file(relativePath: { eq: "vakridalur-kamt.webp" }) {
       ...fluidImage
     }
