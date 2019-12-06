@@ -1,5 +1,5 @@
-import React from "react"
-
+import React, { useState, useEffect } from "react"
+import posed, { PoseGroup } from "react-pose"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
@@ -7,6 +7,8 @@ import Img from "gatsby-image"
 import Footer from "../components/footer"
 
 const IndexPage = ({ data }) => {
+  const [isVisible, setIsVisible] = useState(false)
+  useEffect(() => setIsVisible(true),[])
   return (
     <Layout>
       <SEO title="Home" />
@@ -18,11 +20,18 @@ const IndexPage = ({ data }) => {
             style={{ position: "absolute" }}
           />
         </a>
-        <Img
-          fluid={data.heyBreyd.childImageSharp.fluid}
-          className="hey-breyd"
-          style={{ position: "absolute" }}
-        />
+        <PoseGroup>
+          {isVisible && [
+            <Box key="hey-breyd" className="box" style={{ position: "absolute" }}>
+              <Img
+                fluid={data.heyBreyd.childImageSharp.fluid}
+                className="hey-breyd"
+                style={{ position: "absolute" }}
+              />
+            </Box>,
+          ]}
+        </PoseGroup>
+
         <a href="https://apps.apple.com/sa/app/heybreyd/id1449597688">
           <Img
             fluid={data.appStoreIkon.childImageSharp.fluid}
@@ -166,5 +175,22 @@ export const pageQuery = graphql`
     }
   }
 `
+
+const Box = posed.div({
+  enter: {
+    scale: 1,
+    opacity: 1,
+    delay: 300,
+    transition: {
+      y: { type: "spring", stiffness: 1000, damping: 15 },
+      default: { duration: 500 },
+    },
+  },
+  exit: {
+    scale: 0,
+    opacity: 0,
+    transition: { duration: 150 },
+  },
+})
 
 export default IndexPage
