@@ -39,6 +39,13 @@ const IndexPage = ({ data }) => {
             style={{ position: "absolute" }}
           />
         </a>
+        <a href="https://play.google.com/store/apps/details?id=com.Gaman.Hey_Breyd">
+          <Img
+            fluid={data.googlePlayIkon.childImageSharp.fluid}
+            className="google-play-ikon"
+            style={{ position: "absolute" }}
+          />
+        </a>        
         <Img
           fluid={data.broddiHey.childImageSharp.fluid}
           className="broddi-hey"
@@ -140,6 +147,9 @@ export const pageQuery = graphql`
     appStoreIkon: file(relativePath: { eq: "app-store-ikon.png" }) {
       ...fluidImage
     }
+    googlePlayIkon: file(relativePath: { eq: "google-play-ikon.png" }) {
+      ...fluidImage
+    }    
     binaHey: file(relativePath: { eq: "bina-hey.png" }) {
       ...fluidImage
     }
