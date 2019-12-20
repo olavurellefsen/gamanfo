@@ -45,7 +45,14 @@ const IndexPage = ({ data }) => {
             className="google-play-ikon"
             style={{ position: "absolute" }}
           />
-        </a>        
+        </a>
+        <a href="https://www.amazon.com/gp/product/B082VLFYXR">
+          <Img
+            fluid={data.amazonAppstoreIkon.childImageSharp.fluid}
+            className="amazon-appstore-ikon"
+            style={{ position: "absolute" }}
+          />
+        </a>             
         <Img
           fluid={data.broddiHey.childImageSharp.fluid}
           className="broddi-hey"
@@ -95,7 +102,7 @@ const IndexPage = ({ data }) => {
             <ul className="team-item">
               <li>Páll Brim, tónleikari</li>
               <li>Julius Biskopstø, forritari</li>
-              <li>Ólavur Ellefsen, testari</li>
+              <li>Ólavur Ellefsen, forritari</li>
               <li>Jóhann Østerø, forritari</li>
               <li>Hans Jacob Østerø, teknari</li>
               <li>Marin Fríhild Kamban, námsfrøðingur</li>
@@ -149,7 +156,10 @@ export const pageQuery = graphql`
     }
     googlePlayIkon: file(relativePath: { eq: "google-play-ikon.png" }) {
       ...fluidImage
-    }    
+    }
+    amazonAppstoreIkon: file(relativePath: { eq: "amazon-appstore-ikon.png" }) {
+      ...fluidImage
+    }           
     binaHey: file(relativePath: { eq: "bina-hey.png" }) {
       ...fluidImage
     }
